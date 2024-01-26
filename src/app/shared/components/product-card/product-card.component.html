@@ -64,7 +64,7 @@
   <div class="px-6 pt-4 pb-2 mb-2">
     <div *ngIf="product.prices && product.prices.length > 0">
       <div *ngFor="let item of productUtil.getSalientPrice(product.prices)" class="flex flex-col items-start">
-        <span class="text-xs font-medium text-gray-700">{{item.description}}:</span>
+        <span class="text-xs font-medium text-gray-700">{{item.description}} {{item.description ? ':' : ''}}</span>
         <span class="text-lg font-bold text-gray-900">{{item.currency}} {{item.price | number:'1.2-5'}}</span>
       </div>
     </div>
