@@ -1,0 +1,227 @@
+<header class="fixed w-full z-20 top-0 left-0">
+  <div class="bg-white">
+    <nav class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4 px-2 md:px-10">
+      <div class="flex gap-x-4">
+        <button data-collapse-toggle="navbar-sticky" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-primary rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-primary"
+                aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="block h-6 w-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                  clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <a routerLink="" class="flex items-center">
+          <img src="assets/images/logos/logo-h-semi_black.png" class="h-12 mr-0 md:mr-3" alt="Bien Salud Store">
+        </a>
+      </div>
+      <div class="flex justify-center items-center md:order-2 gap-x-4">
+        <button type="button" *ngIf="false"
+                class="btn-secondary mr-3 hidden md:block">
+          Registro de Clientes
+        </button>
+
+        <div class="hidden md:block">
+          <button type="button" class="flex-shrink-0 inline-flex items-center text-primary focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 me-1.5" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <div class="flex flex-col items-start">
+              <span class="text-sm">Hola,</span>
+              <span class="text-sm font-medium">Inicia sesión</span>
+            </div>
+          </button>
+        </div>
+
+        <div class="h-8 border-r-2 border-white hidden md:block"></div>
+
+        <button type="button" (click)="toggleSlideOver()"
+                class="relative inline-flex items-center text-primary focus:outline-none me-2 md:me-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 me-1.5" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="10" cy="20.5" r="1"/>
+            <circle cx="18" cy="20.5" r="1"/>
+            <path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/>
+          </svg>
+          <span class="sr-only">Notifications</span>
+          <div *ngIf="totalItems"
+               class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2">
+            {{totalItems}}
+          </div>
+        </button>
+      </div>
+      <div class="items-center justify-between hidden w-full md:flex md:w-1/2 md:order-1">
+        <div class="flex w-full">
+          <button type="button" *ngIf="false"
+                  class="flex-shrink-0 z-10 inline-flex items-center py-0 px-2.5 text-center text-primary bg-info rounded-s-lg focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 me-1.5" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="10" r="3"/>
+              <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/>
+            </svg>
+            <div class="flex flex-col items-start">
+              <span class="text-xs">Tu tienda</span>
+              <span class="text-xs font-medium">San Juan de Lurigancho</span>
+            </div>
+          </button>
+          <form (ngSubmit)="goToSearchPage()" class="relative w-full">
+            <input type="search" [formControl]="searchText"
+                   class="block p-3 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-2 border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                   placeholder="Busca tus productos favoritos y más ...">
+            <button type="submit"
+                    class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-gray-500 bg-white rounded-e-lg border-t-2 border-b-2 border-r-2 border-primary hover:bg-info hover:text-primary focus:outline-none">
+              <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+              </svg>
+              <span class="sr-only">Search</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="bg-primary hidden md:block">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4 px-2 md:px-10">
+      <div class="flex items-center">
+        <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
+          <li>
+            <button class="flex items-center justify-between text-white"
+                    (click)="toggleCategoryButton()">Categorías
+              <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                   viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m1 1 4 4 4-4"/>
+              </svg>
+            </button>
+          </li>
+          <li *ngFor="let category of shortcutCategories">
+            <a [routerLink]="['/categorias', category.slug]" class="text-white">{{ category.name }}</a>
+          </li>
+          <li>
+            <a routerLink="tiendas" class="text-white">Tiendas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div [ngClass]="{'hidden': !activeCategoryButton}" class="mt-1 bg-white border-gray-200 shadow-sm border-y">
+      <div class="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 sm:grid-cols-2 md:grid-cols-3 md:px-6">
+        <ul *ngFor="let categories of featuredCategories">
+          <li *ngFor="let featured of categories">
+            <a [routerLink]="['/categorias', featured.slug]"
+               routerLinkActive="bg-info text-primary"
+               (click)="activeCategoryButton = !activeCategoryButton"
+               class="block p-3 rounded-lg hover:bg-info hover:text-primary">
+              <div class="font-semibold">{{featured.name}}</div>
+              <span class="text-sm text-gray-500">{{featured.shortDescription}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div *ngIf="isSlideOverDialog" class="relative z-20">
+  <div @opacity *ngIf="isSlideOver" class="fixed inset-0 bg-gray-600 bg-opacity-75 transition-opacity"></div>
+
+  <div class="fixed inset-0 overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+      <div (click)="toggleSlideOver()" class="fixed inset-0"></div>
+      <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+
+        <div @translateX *ngIf="isSlideOver" class="pointer-events-auto w-screen max-w-2xl">
+          <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+            <div class="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
+              <div class="flex items-start justify-between">
+                <h2 class="text-lg font-medium text-gray-900">Mi Carrito de Compras</h2>
+                <div class="ml-3 flex h-7 items-center">
+                  <button type="button" (click)="toggleSlideOver()" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Close panel</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                         aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <div class="flow-root">
+                  <ul *ngIf="cartItems && cartItems.length > 0; else emptyShoppingCart"
+                      role="list" class="-my-6 divide-y divide-gray-200">
+                    <li *ngFor="let item of cartItems" class="flex py-6">
+                      <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                        <img [src]="item.productImage" [alt]="item.productName"
+                             class="h-full w-full object-cover object-center">
+                      </div>
+
+                      <div class="ml-4 flex flex-1 flex-col">
+                        <div>
+                          <div class="flex justify-between text-sm md:text-base font-medium text-gray-900">
+                            <h3>
+                              <a routerLink="">{{item.productName}}</a>
+                            </h3>
+                            <p class="ml-4">S/ {{item.price | number:'1.2-5'}}</p>
+                          </div>
+                          <p class="mt-1 text-xs md:text-sm text-gray-500">{{item.productPresentation}}</p>
+                        </div>
+                        <div class="flex flex-1 items-end justify-between text-xs md:text-sm">
+                          <p class="text-gray-500">Cantidad: {{item.quantity}}</p>
+
+                          <div class="flex">
+                            <button type="button" (click)="removeCartItem(item.productId)"
+                                    class="font-medium text-danger hover:text-red-500">Eliminar
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <ng-template #emptyShoppingCart>
+                    <div class="flex justify-center">
+                      <div>El carrito esta vacio, empieza agregando productos para verlos en tu carrito</div>
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="cartItems && cartItems.length > 0"
+                 class="border-t border-gray-200 py-6 px-4 sm:px-6">
+              <div class="flex justify-between text-base font-medium text-gray-900">
+                <p>Total</p>
+                <p>S/ {{totalAmount | number:'1.2-5'}}</p>
+              </div>
+              <p *ngIf="false" class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+              <div class="mt-6">
+                <a routerLink=""
+                   class="flex items-center justify-center rounded-md border border-primary rounded-lg bg-primary px-6 py-3 text-lg font-medium text-white hover:bg-blue-700">
+                  Continuar
+                </a>
+              </div>
+              <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
+                <p>
+                  ó
+                  <button type="button" (click)="toggleSlideOver()"
+                          class="font-medium text-primary hover:text-blue-700">
+                    Seguir comprando
+                    <span aria-hidden="true"> &rarr;</span>
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

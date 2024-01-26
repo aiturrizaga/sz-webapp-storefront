@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Disfruta del verano protegiendo tu piel",
+    "url": "assets/images/banners/banner_0001.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Vacunas para toda la familia",
+    "url": "assets/images/banners/banner_0002.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Promoción complementos alimenticios",
+    "url": "assets/images/banners/banner_0003.jpg"
+  }
+]
