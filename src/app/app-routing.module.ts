@@ -8,6 +8,7 @@ import { ProductPage } from './modules/product/product.page';
 import { CategoryPage } from './modules/category/category.page';
 import { CategoryDetailPage } from './modules/category/detail/category-detail.page';
 import { ShopPage } from './modules/shop/shop.page';
+import { CheckoutPage } from './modules/checkout/checkout.page';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'carrito-compras',
         component: ShopCartPage
+      },
+      {
+        path: 'checkout',
+        component: CheckoutPage
       },
       {
         path: 'buscar',

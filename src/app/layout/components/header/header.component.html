@@ -200,10 +200,10 @@
                 <p>Total</p>
                 <p>S/ {{totalAmount | number:'1.2-5'}}</p>
               </div>
-              <p *ngIf="false" class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+              <p class="mt-0.5 text-sm text-gray-500">Los costos de envío e impuestos son calculados al finalizar la compra.</p>
               <div class="mt-6">
-                <a routerLink=""
-                   class="flex items-center justify-center rounded-md border border-primary rounded-lg bg-primary px-6 py-3 text-lg font-medium text-white hover:bg-blue-700">
+                <a routerLink="checkout" (click)="toggleSlideOver()"
+                   class="flex items-center justify-center rounded-md border border-primary rounded-lg bg-primary px-6 py-3 text-lg font-medium text-white hover:opacity-85">
                   Continuar
                 </a>
               </div>
