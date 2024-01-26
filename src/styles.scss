@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --biensalud-primary: #0b587b;
+  --biensalud-secondary: #5ec2d0;
+  --biensalud-info: #EBECFC;
+  --biensalud-danger: #FF0033;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.btn-primary {
+  @apply text-white bg-primary hover:bg-blue-700 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center;
+
+  &.btn-large {
+    @apply font-bold text-lg px-8 py-3;
+  }
+}
+
+.btn-outline-primary {
+  @apply text-primary bg-white hover:bg-primary hover:text-white border-2 border-primary focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center;
+}
+
+.btn-secondary {
+  @apply text-primary bg-secondary hover:bg-info focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center;
+
+  &.btn-large {
+    @apply font-bold text-lg px-8 py-3;
+  }
+}
