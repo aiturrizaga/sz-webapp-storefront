@@ -66,13 +66,13 @@
       <p class="mt-8 text-lg font-medium">Métodos de envío</p>
       <form class="mt-5 grid gap-6">
         <div class="relative">
-          <input class="peer hidden" id="radio_1" type="radio" name="radio" checked/>
+          <input class="peer hidden" id="deliveryExpressMethod" type="radio" [checked]="deliveryMethod === 'express'" (click)="setDeliveryMethod('express')"/>
           <span
             class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
           <label
             class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
-            for="radio_1">
-            <img class="w-14 object-contain" src="/images/naorrAeygcJzX0SyNI4Y0.png" alt=""/>
+            for="deliveryExpressMethod">
+            <img class="w-14 object-contain" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6yi0djlxZnT8c0nYgWrX_pimeI7rSixOCzA&usqp=CAU" alt=""/>
             <div class="ml-5">
               <span class="mt-2 font-semibold">Delivery Express</span>
               <p class="text-slate-500 text-sm leading-6">Delivery: 1-2 Días</p>
@@ -80,13 +80,13 @@
           </label>
         </div>
         <div class="relative">
-          <input class="peer hidden" id="radio_2" type="radio" name="radio" checked/>
+          <input class="peer hidden" id="deliveryClassicMethod" type="radio" [checked]="deliveryMethod === 'classic'" (click)="setDeliveryMethod('classic')"/>
           <span
             class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
           <label
             class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
-            for="radio_2">
-            <img class="w-14 object-contain" src="/images/oG8xsl3xsOkwkMsrLGKM4.png" alt=""/>
+            for="deliveryClassicMethod">
+            <img class="w-14 object-contain" src="https://www.ecuadelivery.com/wp-content/uploads/2020/05/shipping-icon-flatelements.png" alt=""/>
             <div class="ml-5">
               <span class="mt-2 font-semibold">Delivery Clásico</span>
               <p class="text-slate-500 text-sm leading-6">Delivery: 2-4 Días</p>
@@ -177,7 +177,7 @@
           </div>
           <div class="flex items-center justify-between">
             <p class="text-sm font-medium text-gray-900">Delivery</p>
-            <p class="font-semibold text-gray-900">S/ 8.00</p>
+            <p class="font-semibold text-gray-900">S/ {{deliveryAmount | number:'1.2-5'}}</p>
           </div>
         </div>
         <div class="mt-6 flex items-center justify-between">

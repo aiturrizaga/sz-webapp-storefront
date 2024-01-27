@@ -18,7 +18,7 @@
         "fromUnit": 1,
         "salient": true,
         "visible": true,
-        "default": false
+        "default": true
       }
     ]
   },
@@ -41,7 +41,7 @@
         "fromUnit": 1,
         "salient": true,
         "visible": true,
-        "default": false
+        "default": true
       }
     ]
   },
@@ -73,7 +73,7 @@
         "fromUnit": 1,
         "salient": true,
         "visible": true,
-        "default": false
+        "default": true
       }
     ]
   },
@@ -96,7 +96,7 @@
         "fromUnit": 1,
         "salient": true,
         "visible": true,
-        "default": false
+        "default": true
       }
     ]
   },
@@ -119,7 +119,7 @@
         "fromUnit": 1,
         "salient": true,
         "visible": true,
-        "default": false
+        "default": true
       }
     ]
   }
