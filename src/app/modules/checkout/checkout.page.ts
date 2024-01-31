@@ -1,4 +1,4 @@
-import { Component, effect, OnInit } from '@angular/core';
+import { Component, effect, OnInit, signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShopCartService } from '../../core/services/shop-cart.service';
 import { CartItem } from '../../core/interfaces';
@@ -22,6 +22,7 @@ export class CheckoutPage implements OnInit {
   constructor(private shopCartService: ShopCartService) {
     effect(() => {
       this.subtotal = this.shopCartService.cart().totalAmount;
+      this.totalAmount = this.subtotal + this.deliveryAmount;
     });
   }
 
