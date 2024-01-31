@@ -1,8 +1,9 @@
+<app-sidebar #appSidebar></app-sidebar>
 <header class="fixed w-full z-20 top-0 left-0">
   <div class="bg-white">
     <nav class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4 px-2 md:px-10">
       <div class="flex gap-x-4">
-        <button data-collapse-toggle="navbar-sticky" type="button"
+        <button type="button" (click)="toggleSidebar()"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-primary rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-primary"
                 aria-controls="navbar-sticky" aria-expanded="false">
           <span class="sr-only">Open main menu</span>

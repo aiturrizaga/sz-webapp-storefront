@@ -1,0 +1,50 @@
+<div class="relative z-30" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+
+  <div @opacity *ngIf='isSlideOver' class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+  <div @translateX *ngIf='isSlideOver' class="fixed inset-0 overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+
+      <div @opacity *ngIf='isSlideOver' (click)="toggleSlide()" class="fixed inset-0"></div>
+
+      <div class="pointer-events-none fixed inset-y-0 left-0 flex max-w-full">
+
+        <div @translateX *ngIf='isSlideOver' class="pointer-events-auto relative w-screen max-w-md">
+
+          <div @opacity *ngIf='isSlideOver' class="absolute top-5 right-0 -ml-8 flex pt-4 pr-2 sm:-ml-10 sm:pr-8">
+            <button type="button" (click)="toggleSlide()" class="rounded-md text-primary hover:opacity-85 focus:outline-none focus:ring-2 focus:ring-primary">
+              <span class="sr-only">Close panel</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+            <div class="px-4 sm:px-6">
+              <a routerLink="" class="flex items-center" (click)="toggleSlide()">
+                <img src="assets/images/logos/logo-h-semi_black.png" class="h-12 mr-0" alt="Bien Salud Store">
+              </a>
+            </div>
+            <div class="relative mt-6 flex-1 px-4 sm:px-6">
+              <ul class="focus:outline-none mt-2">
+                <li class="px-4 py-2.5 text-gray-700 block px-4 py-2 text-base">
+                  <div class="flex justify-between">
+                    <span>Categorías</span>
+                  </div>
+                  <ul>
+                    <li *ngFor="let category of categories"
+                        class="px-4 py-2.5 hover:bg-gray-100 text-gray-700 block px-4 py-0.5 text-sm">
+                      <a [routerLink]="['/categorias', category.slug]"
+                         (click)="toggleSlide()">{{category.name}}</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

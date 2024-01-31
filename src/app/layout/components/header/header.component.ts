@@ -1,4 +1,4 @@
-import { Component, effect, OnInit } from '@angular/core';
+import { Component, effect, OnInit, ViewChild } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ShopCartService } from '../../../core/services/shop-cart.service';
@@ -6,6 +6,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { CartItem, Category } from '../../../core/interfaces';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoryService } from '../../../core/services/category.service';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,8 @@ import { CategoryService } from '../../../core/services/category.service';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterLinkActive
+    RouterLinkActive,
+    SidebarComponent
   ],
   templateUrl: './header.component.html',
   animations: [
@@ -42,6 +44,7 @@ import { CategoryService } from '../../../core/services/category.service';
   ]
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild('appSidebar') appSidebar?: SidebarComponent;
   public activeCategoryButton: boolean = false;
   public totalItems: number = 0;
   public totalAmount: number = 0;
@@ -66,6 +69,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategories();
+  }
+
+  toggleSidebar() {
+    this.appSidebar?.toggleSlide();
   }
 
   getCategories(): void {

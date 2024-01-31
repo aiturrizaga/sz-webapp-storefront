@@ -8,7 +8,7 @@
   <section class="pb-12 pt-6">
     <div class="md:flex">
       <ul
-        class="flex-column space-y space-y-2 text-sm font-medium text-gray-500 md:me-4 mb-4 md:mb-0">
+        class="hidden md:block flex-column space-y space-y-2 text-sm font-medium text-gray-500 md:me-4 mb-4 md:mb-0">
         <li *ngFor="let category of categories">
           <a [routerLink]="['/categorias', category.slug]"
              routerLinkActive="text-white bg-primary active"
